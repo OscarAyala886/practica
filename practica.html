@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PRACTICA 3 - SEMESTRE 6 </title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        function ejemploDoWhile() {
+            var contador = 0;
+            var msg = '';
+            let name = document.getElementById("name").value;
+            let car = document.getElementById("car").value;
+            do {
+                msg = msg + '\t ' + name + +(contador + 1) + '\n';
+                contador += 1;
+            } while (contador < car);
+            alert('\n' + msg)
+        }
+    </script>
+  </head>
+  <body>
+    <h1>Funcion (javascript y html) </h1>
+    <form>
+        <label for="name">Escribe tu nombre completo</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="name">caracteres (con espacio)</label>    
+        <input type="number" id="car" name="car"><br><br>
+        <button type="button" onclick="ejemploDoWhile()"> Pulsa aqui </button>
+    </form>
+  </body>
+</html>
