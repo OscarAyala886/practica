@@ -1,0 +1,87 @@
+import pandas as pd
+
+# Generar un DataFrame con los datos del fichero.
+titanic = pd.read_csv('titanic.csv', index_col=0)
+print("""
+
+Ejercicio 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+""")
+print(titanic)
+
+print("""
+
+Ejercicio 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+""")
+print('Dimensiones:', titanic.shape)
+print('Número de elemntos:', titanic.size)
+print('Nombres de columnas:', titanic.columns)
+print('Nombres de filas:', titanic.index)
+print('Tipos de datos:\n', titanic.dtypes)
+print('Primeras 10 filas:\n', titanic.head(10))
+print('Últimas 10 filas:\n', titanic.tail(10))
+
+print("""
+
+Ejercicio 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+""")
+print(titanic.loc[148])
+
+print("""
+
+Ejercicio 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+""")
+print(titanic.iloc[range(0,titanic.shape[0],2)])
+
+print("""
+
+Ejercicio 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+""")
+print(titanic[titanic["Pclass"]==1]['Name'].sort_values())
+
+print("""
+
+Ejercicio 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+""")
+print(titanic['Survived'].value_counts()/titanic['Survived'].count() * 100)
+
+print("""
+
+Ejercicio 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+""")
+print(titanic.groupby('Pclass')['Survived'].value_counts(normalize=True))
+
+print("""
+
+Ejercicio 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+""")
+titanic = titanic[titanic['Age'].notna()]
+
+print("""
+
+Ejercicio 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+""")
+print(titanic.groupby(['Pclass','Sex'])['Age'].mean().unstack()['female'])
+
+print("""
+
+Ejercicio 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+""")
+titanic['Young'] = titanic['Age'] < 18
+
+print("""
+
+Ejercicio 11 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+""")
+print(titanic.groupby(['Pclass', 'Young'])['Survived'].value_counts(normalize = True) * 100)
+

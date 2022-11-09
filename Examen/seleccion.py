@@ -1,0 +1,35 @@
+#fondo.png = «600 px de ancho x 770 px de alto;
+#jugadores………… = «100 px de ancho X 106 px de alto»;
+
+
+from tkinter import *
+ventana = Tk()
+ventana.geometry("600x700+150+50")
+ventana.config(bg="whitesmoke")
+ventana.title("Mi seleccion")
+
+imagenfondo = PhotoImage(file='cancha3.png')
+Fondo = Label(ventana, image=imagenfondo).place(x=0,y=0)
+arq = PhotoImage(file='R.png')
+Arquero = Label (ventana, image=arq).place(x=250,y=20)
+trauco = PhotoImage(file='1.png')
+jug1 = Label (ventana, image=trauco).place(x=40,y=150)
+mudo = PhotoImage(file='2.png')
+jug2 = Label (ventana, image=mudo).place(x=180,y=150)
+ramos = PhotoImage(file='3.png')
+jug3 = Label (ventana, image=ramos).place(x=320,y=150)
+corzo = PhotoImage(file='1.png')
+jug4 = Label (ventana, image=corzo).place(x=460,y=150)
+tapia = PhotoImage(file='2.png')
+jug5 = Label (ventana, image=tapia).place(x=120,y=280)
+cueva = PhotoImage(file='3.png')
+jug6 = Label (ventana, image=cueva).place(x=250,y=280)
+advincula = PhotoImage(file='1.png')
+jug7 = Label (ventana, image=advincula).place(x=400,y=280)
+carrillo = PhotoImage(file='2.png')
+jug8 = Label (ventana, image=carrillo).place(x=150,y=400)
+guerrero = PhotoImage(file='3.png')
+jug9 = Label (ventana, image=guerrero).place(x=260,y=520)
+farfan = PhotoImage(file='1.png')
+jug10 = Label (ventana, image=farfan).place(x=360,y=400)
+ventana.mainloop()
